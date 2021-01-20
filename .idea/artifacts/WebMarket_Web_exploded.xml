@@ -1,0 +1,18 @@
+<component name="ArtifactManager">
+  <artifact type="exploded-war" name="WebMarket:Web exploded">
+    <output-path>$PROJECT_DIR$/out/artifacts/WebMarket_Web_exploded</output-path>
+    <root id="root">
+      <element id="javaee-facet-resources" facet="WebMarket/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="WebMarket" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="library" level="project" name="Maven: javax.servlet:javax.servlet-api:3.1.0" />
+          <element id="library" level="project" name="Maven: com.google.protobuf:protobuf-java:3.11.4" />
+          <element id="library" level="project" name="Maven: mysql:mysql-connector-java:8.0.23" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
