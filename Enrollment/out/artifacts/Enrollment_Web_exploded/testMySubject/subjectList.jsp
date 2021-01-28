@@ -12,7 +12,7 @@
 %>
 <a href="managerMain.jsp">관리자 메인으로</a><br><br>
 
-전체 강읙 개수 : <%=list.size()%>개 <br><br>
+전체 강의 개수 : <%=list.size()%>개 <br><br>
 
 <a href="subjectInsert.jsp">강의 등록</a><br><br>
 
