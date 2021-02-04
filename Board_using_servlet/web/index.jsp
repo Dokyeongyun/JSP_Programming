@@ -13,7 +13,7 @@
         center = "center.jsp";
     }
 
-    try{
+/*    try{
         InitialContext initCtx = new InitialContext();
         Context envContext = (Context)initCtx.lookup("java:/comp/env");
         DataSource ds = (DataSource) envContext.lookup("jdbc/seohee");
@@ -25,7 +25,7 @@
         }
     }catch (Exception e){
         e.printStackTrace();
-    }
+    }*/
 
 %>
 

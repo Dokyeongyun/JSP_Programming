@@ -24,18 +24,90 @@
   - input 속성 type = file
 --%>
 
-<center>
-    <h3>파일 업로드 폼</h3>
+<style>
+    .input-file-button{
+        width: 100%;
+        height: 100%;
+        margin: 5px;
+        padding: 6px 15px;
+        background-color: mediumpurple;
+        border-radius: 2px;
+        color: white;
+        cursor: pointer;
+        font-size: 12px;
+    }
+    .fileUpload_table {
+        border-top: 2px solid black;
+        border-bottom: 2px solid black;
+        padding: 10px;
+    }
+    .fileUpload_table > tbody > tr > td{
+        font-size: 18px;
+        font-weight: bold;
+        padding: 5px;
+    }
+    .fileUpload_table_button {
+        background-color: mediumpurple;
+        color: white;
+        border: none;
+        font-size: 15px;
+        font-weight: bolder;
+        padding: 7px 10px;
+        width: 100px;
+    }
+</style>
+
+<div>
+    <h1>파일 업로드</h1>
     <%--
         파일업로드를 위해선 반드시 post방식, enctype(인코딩타입) 은 Multipart/form-data여야함
     --%>
-    <form action="fileUpload.jsp" method="post" enctype="Multipart/form-data">
-        작성자 : <input type="text" name="name"/><br>
-        제목 : <input type="text" name="subject"/><br>
-        파일명 : <input type="file" name="fileName"/><br>
-        <input type="submit" value="전송"/>
-        <input type="reset" value="취소"/>
+    <form action="fileUpload.do" method="post" enctype="Multipart/form-data">
+        <table class="fileUpload_table">
+            <tr>
+                <td>제목</td>
+                <td colspan="2"><input type="text" name="title" style="width: 100%"></td>
+            </tr>
+            <tr style="height: 50px">
+                <td>FILE1</td>
+                <td><input type="text" id="fileName1_value"></td>
+                <td style="width: max-content">
+                    <label class="input-file-button" for="fileName1">찾아보기</label>
+                    <input type="file" id="fileName1" name="fileName1" style="display: none"/>
+                </td>
+            </tr>
+<%--            <tr style="height: 50px">
+                <td>FILE2</td>
+                <td><input type="text" id="fileName2_value" readonly></td>
+                <td style="width: max-content">
+                    <label class="input-file-button" for="fileName2">찾아보기</label>
+                    <input type="file" id="fileName2" name="fileName2" style="display: none"/>
+                </td>
+            </tr>--%>
+            <tr>
+                <input type="hidden" name="writer"/>
+                <td colspan="3" align="center">
+                    <input class="fileUpload_table_button" type="button" value="뒤로" onclick="history.back()"/>
+                    <input class="fileUpload_table_button" type="submit" value="업로드"/>
+                </td>
+            </tr>
+        </table>
     </form>
-</center>
+</div>
+
+<script>
+    var f1 = document.getElementById('fileName1');
+    var f2 = document.getElementById('fileName2');
+
+    var fvalue1 = document.getElementById('fileName1_value');
+    var fvalue2 = document.getElementById('fileName2_value');
+
+    f1.addEventListener('change', function(event){
+        fvalue1.value = f1.value;
+    });
+    f2.addEventListener('change', function(event){
+        fvalue2.value = f2.value;
+    });
+</script>
 </body>
 </html>
