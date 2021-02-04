@@ -1,3 +1,4 @@
+/*
 package Controller;
 
 import Model.BoardDAO;
@@ -39,3 +40,4 @@ public class BoardModifyServlet extends HttpServlet {
         dis.forward(req, resp);
     }
 }
+*/

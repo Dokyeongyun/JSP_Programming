@@ -1,32 +1,22 @@
-package Controller;
+package Action.Board;
 
+import Action.*;
 import Model.BoardDAO;
 import Model.BoardDTO;
 import Model.MemberDAO;
 import Model.MemberDTO;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/boardWrite.do")
-public class BoardWriteServlet extends HttpServlet {
+public class BoardWriteAction implements Action{
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
+    public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        req.setCharacterEncoding("UTF-8");
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
-
-    public void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int check = -1;
 
         String title = req.getParameter("title");
@@ -45,7 +35,10 @@ public class BoardWriteServlet extends HttpServlet {
 
         req.setAttribute("check", check);
 
-        RequestDispatcher dis = req.getRequestDispatcher("boardWritePro.jsp");
-        dis.forward(req, resp);
+        ActionForward actionForward = new ActionForward();
+        actionForward.setNextPath("boardWritePro.jsp");
+        actionForward.setRedirect(false);
+
+        return actionForward;
     }
 }

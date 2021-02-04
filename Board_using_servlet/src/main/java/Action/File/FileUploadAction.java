@@ -1,12 +1,15 @@
-package Controller;
+package Action.File;
 
+import Action.*;
+import Model.BoardDAO;
+import Model.BoardDTO;
+import Model.MemberDAO;
+import Model.MemberDTO;
 import com.oreilly.servlet.MultipartRequest;
 import com.oreilly.servlet.multipart.DefaultFileRenamePolicy;
 
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
@@ -14,19 +17,9 @@ import java.io.File;
 import java.io.IOException;
 import java.util.Enumeration;
 
-@WebServlet("/fileUpload.do")
-public class FileUploadServlet extends HttpServlet {
+public class FileUploadAction implements Action{
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
-
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
-
-    public void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
+    public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
         // request.getRealPath("상대경로")를 이용해 파일을 저장할 절대 경로를 구해옴
         // 운영체제 및 프로젝트가 위치할 환경에 따라 경로가 다름
 
@@ -85,7 +78,10 @@ public class FileUploadServlet extends HttpServlet {
         req.setAttribute("fileName", uniqueFileName);
         req.setAttribute("originalName", originalName);
 
-        RequestDispatcher dis = req.getRequestDispatcher("index.jsp?center=fileCheck.jsp");
-        dis.forward(req, resp);
+        ActionForward actionForward = new ActionForward();
+        actionForward.setNextPath("index.jsp?center=fileCheck.jsp");
+        actionForward.setRedirect(false);
+
+        return actionForward;
     }
 }

@@ -1,30 +1,20 @@
-package Controller;
+package Action.User;
 
+import Action.*;
 import Model.MemberDAO;
 import Model.MemberDTO;
 
-import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
-import javax.servlet.annotation.WebServlet;
-import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 
-@WebServlet("/join.do")
-public class JoinServlet extends HttpServlet {
+public class JoinAction implements Action{
     @Override
-    protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
+    public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+        req.setCharacterEncoding("UTF-8");
 
-    @Override
-    protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        reqPro(req, resp);
-    }
-
-    public void reqPro(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         int check = 0;
 
         String id = req.getParameter("id");
@@ -43,7 +33,10 @@ public class JoinServlet extends HttpServlet {
 
         req.setAttribute("check", check);
 
-        RequestDispatcher dis = req.getRequestDispatcher("joinPro.jsp");
-        dis.forward(req, resp);
+        ActionForward actionForward = new ActionForward();
+        actionForward.setNextPath("joinPro.jsp");
+        actionForward.setRedirect(false);
+
+        return actionForward;
     }
 }

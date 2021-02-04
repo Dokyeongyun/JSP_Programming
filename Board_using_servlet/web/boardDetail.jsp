@@ -53,8 +53,8 @@
             <tr>
                 <td colspan="6">
                     <c:if test="${sessionScope.get('loginUser') eq boardDetail.writer}">
-                        <input class="board_table_input" type="submit" value="수정하기" onclick="location.href='boardModify.do?num=${boardDetail.num}'"/>
-                        <input class="board_table_input" type="submit" value="삭제하기" onclick="location.href='boardDelete.do?num=${boardDetail.num}'"/>
+                        <input class="board_table_input" type="button" value="수정하기" onclick="location.href='boardModify.do?num=${boardDetail.num}'"/>
+                        <input class="board_table_input" type="button" value="삭제하기" onclick="location.href='boardDelete.do?num=${boardDetail.num}'"/>
                     </c:if>
                     <c:if test="${sessionScope.get('loginUser') ne boardDetail.writer}">
                         <input class="board_table_input" value="댓글쓰기"/>

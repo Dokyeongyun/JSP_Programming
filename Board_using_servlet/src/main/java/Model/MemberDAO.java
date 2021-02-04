@@ -63,7 +63,7 @@ public class MemberDAO {
             pstmt.setString(1, member.getId());
             pstmt.setString(2, member.getPassword());
             pstmt.setString(3, member.getName());
-            pstmt.setString(3, member.getName());
+            pstmt.setString(4, member.getNickName());
 
             check = pstmt.executeUpdate();
         } catch (Exception e){
