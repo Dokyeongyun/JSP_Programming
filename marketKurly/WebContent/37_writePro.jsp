@@ -9,26 +9,9 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	request.setCharacterEncoding("UTF-8");
-	%>
-	
-	<%
-	String writer = request.getParameter("writer");
-	String title = request.getParameter("title");
-	String pw = request.getParameter("pw");
-	String content = request.getParameter("content");
-	
-	boardDTO dto = new boardDTO();
-	
-	dto.setWriter(writer);
-	dto.setTitle(title);
-	dto.setPw(pw);
-	dto.setContent(content);
-	
-	boardDAO.instance.insertBoard(dto);
-	response.sendRedirect("00_shopMain.jsp?center=07_customerCenter.jsp");
-	
-	%>
+<script>
+	alert('게시글이 작성되었습니다.');
+	location.href='customerCenter.do';
+</script>
 </body>
 </html>

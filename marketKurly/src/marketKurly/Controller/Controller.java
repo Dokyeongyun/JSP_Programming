@@ -33,6 +33,19 @@ public class Controller extends HttpServlet {
 		commandMap.put("/showOneItem.do", new _13_ShowOneItem());
 		commandMap.put("/insertCart.do", new _14_InsertCart());
 		commandMap.put("/cartInfo.do", new _15_CartInfo());
+		commandMap.put("/showNewItem.do", new _16_ShowNewItem());
+		commandMap.put("/showBestItem.do", new _17_ShowBestItem());
+		commandMap.put("/showDiscountedItem.do", new _18_ShowDiscountedItem());
+		commandMap.put("/showBoardContent.do", new _19_ShowBoardContent());
+		commandMap.put("/update.do", new _20_Update());
+		commandMap.put("/delete.do", new _21_Delete());
+		commandMap.put("/writeAnswer.do", new _22_WriteAnswer());
+		commandMap.put("/write.do", new _23_Write());
+		commandMap.put("/writePro.do", new _24_WritePro());
+		commandMap.put("/updatePro.do", new _25_UpdatePro());
+		commandMap.put("/writeAnswerPro.do", new _26_WriteAnswerPro());
+		commandMap.put("/checkPwForRead.do", new _27_CheckPwForRead());
+		commandMap.put("/checkPwForReadPro.do", new _28_CheckPwForReadPro());
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
