@@ -1,6 +1,6 @@
 <%@page import="java.util.Vector"%>
-<%@page import="marketKurly.itemDAO"%>
-<%@page import="marketKurly.itemDTO"%>
+<%@page import="marketKurly.DAO.itemDAO"%>
+<%@page import="marketKurly.DTO.itemDTO"%>
 <%@page import="java.util.ArrayList"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>

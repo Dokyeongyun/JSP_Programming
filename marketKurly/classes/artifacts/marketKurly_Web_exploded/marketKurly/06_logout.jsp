@@ -12,9 +12,7 @@ request.setCharacterEncoding("UTF-8");
 %>
 
 	<%
-	session.invalidate();
 	response.sendRedirect("00_shopMain.jsp");
-	
 	%>
 </body>
 </html>

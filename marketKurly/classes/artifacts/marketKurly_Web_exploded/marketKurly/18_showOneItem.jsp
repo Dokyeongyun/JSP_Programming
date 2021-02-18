@@ -1,5 +1,5 @@
-<%@page import="marketKurly.itemDAO"%>
-<%@page import="marketKurly.itemDTO"%>
+<%@page import="marketKurly.DAO.itemDAO"%>
+<%@page import="marketKurly.DTO.itemDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>

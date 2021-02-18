@@ -1,9 +1,9 @@
-<%@page import="marketKurly.managerDAO"%>
-<%@page import="marketKurly.managerDTO"%>
-<%@page import="marketKurly.buyDAO"%>
-<%@page import="marketKurly.cartDAO"%>
-<%@page import="marketKurly.customerDAO"%>
-<%@page import="marketKurly.customerDTO"%>
+<%@page import="marketKurly.DAO.managerDAO"%>
+<%@page import="marketKurly.DTO.managerDTO"%>
+<%@page import="marketKurly.DAO.buyDAO"%>
+<%@page import="marketKurly.DAO.cartDAO"%>
+<%@page import="marketKurly.DAO.customerDAO"%>
+<%@page import="marketKurly.DTO.customerDTO"%>
 <%@ page language="java" contentType="text/html; charset=EUC-KR"
     pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
@@ -30,9 +30,9 @@ String name="";
 			<%
 			if(id==null && managerId==null){
 				%>
-			<a href = "00_shopMain.jsp?center=08_join.jsp" style="text-decoration: none">회원가입</a>&nbsp;
+			<a href = "join.do" style="text-decoration: none">회원가입</a>&nbsp;
 			<img alt="" src="img/top1.jpg"> &nbsp;
-			<a href = "00_shopMain.jsp?center=04_customerLogin.jsp" style="text-decoration: none">로그인</a>&nbsp;
+			<a href = "login.do" style="text-decoration: none">로그인</a>&nbsp;
 				<%
 			}else{
 				if(id!=null){

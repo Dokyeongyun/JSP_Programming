@@ -1,5 +1,5 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -129,16 +129,20 @@ create table board(
  --%>
 
 <%
-	String center=request.getParameter("center");
-
-	if(center==null){
-		center="03_center.jsp";
-	}
+//	String center=request.getParameter("center");
+//
+//	if(center==null){
+//		center="03_center.jsp";
+//	}
 %>
+
+<c:if test="${center == null}">
+	<c:set var="center" value="03_center.jsp"/>
+</c:if>
 
 	<div align="center">
 		<jsp:include page="01_top.jsp"/>
-		<jsp:include page="<%=center %>"/>
+		<jsp:include page="${center}"/>
 		<jsp:include page="02_bottom.jsp"/>
 	</div>
 </body>

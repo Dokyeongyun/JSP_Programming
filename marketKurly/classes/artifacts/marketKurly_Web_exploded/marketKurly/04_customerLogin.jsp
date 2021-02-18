@@ -31,9 +31,9 @@ request.setCharacterEncoding("UTF-8");
 		</tr>
 		<tr height = "50">
 			<td width = "300" align="right">
-				<font size="2" color="gray"><a href="00_shopMain.jsp?center=10_findMemberId.jsp" style="text-decoration: none">아이디찾기</a></font>
+				<font size="2" color="gray"><a href="findMemberId.do" style="text-decoration: none">아이디찾기</a></font>
 				<img alt="" src="img/top1.jpg"> 
-				<font size="2" color="gray"><a href="00_shopMain.jsp?center=12_findMemberPw.jsp" style="text-decoration: none">비밀번호찾기</a></font>
+				<font size="2" color="gray"><a href="findMemberPw.do" style="text-decoration: none">비밀번호찾기</a></font>
 			</td>
 		</tr>
 		
