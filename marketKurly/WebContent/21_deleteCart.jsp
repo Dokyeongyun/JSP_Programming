@@ -1,6 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@page import="marketKurly.DAO.cartDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,27 +8,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-<%
-request.setCharacterEncoding("UTF-8");
-%>
-
-<%
-	int cart_number = Integer.parseInt(request.getParameter("cart_number"));
-	String buyer =(String)session.getAttribute("id");
-	
-	if(buyer==null){
-		%>
-		<script>
+<c:if test="${check == -1}">
+	<script>
 		alert("로그인 후 이용이 가능합니다.");
-		location.href="00_shop_Main.jsp";
-		</script>
-		<%
-	}else{
-		cartDAO.instance.deleteCart(cart_number);
-		response.sendRedirect("00_shopMain.jsp?center=19_cartInfo.jsp");
-		
-	}
-
-%>
+		location.href="main.do";
+	</script>
+</c:if>
+<c:if test="${check != -1}">
+	<script>
+		alert("상품을 장바구니에서 삭제했습니다.");
+		location.href="cartInfo.do";
+	</script>
+</c:if>
 </body>
 </html>

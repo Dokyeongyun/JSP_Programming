@@ -46,6 +46,10 @@ public class Controller extends HttpServlet {
 		commandMap.put("/writeAnswerPro.do", new _26_WriteAnswerPro());
 		commandMap.put("/checkPwForRead.do", new _27_CheckPwForRead());
 		commandMap.put("/checkPwForReadPro.do", new _28_CheckPwForReadPro());
+		commandMap.put("/deleteCart.do", new _29_DeleteCart());
+		commandMap.put("/order.do", new _30_Order());
+		commandMap.put("/insertOrderList.do", new _31_InsertOrderList());
+		commandMap.put("/orderListCheck.do", new _32_OrderListCheck());
 	}
 
 	protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
