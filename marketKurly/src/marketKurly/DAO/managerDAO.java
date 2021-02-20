@@ -89,14 +89,15 @@ public class managerDAO {
 		return dto;
 	}
 	
-	public void deleteItem(int item_number) {
+	public int deleteItem(int item_number) {
+		int check = -1;
 		try {
 			conn = getConnection();
 			
 			String sql = "delete from item where item_number=?";
 			pstmt = conn.prepareStatement(sql);
 			pstmt.setInt(1, item_number);
-			pstmt.executeUpdate();
+			check = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -106,11 +107,12 @@ public class managerDAO {
 				try {pstmt.close();}catch(SQLException sqle) {}
 			if(rs!=null) 
 				try {rs.close();}catch(SQLException sqle) {}
-			
 		}
+		return check;
 	}
 	
-	public void itemUpdate(itemDTO dto, int item_number) {
+	public int itemUpdate(itemDTO dto, int item_number) {
+		int check = -1;
 		//아이템정보 수정하기
 		try {
 			conn = getConnection();
@@ -126,7 +128,7 @@ public class managerDAO {
 			pstmt.setInt(7, dto.getDiscount_rate());
 			pstmt.setInt(8, item_number);
 			
-			pstmt.executeUpdate();
+			check = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -136,9 +138,11 @@ public class managerDAO {
 				try {pstmt.close();}catch(SQLException sqle) {}
 			
 		}
+		return check;
 	}
 	
-	public void insertNewItem(itemDTO dto) {
+	public int insertNewItem(itemDTO dto) {
+		int check = -1;
 		try {
 			conn = getConnection();
 			
@@ -162,7 +166,7 @@ public class managerDAO {
 			pstmt.setString(7, dto.getItem_info());
 			pstmt.setInt(8, dto.getDiscount_rate());
 			
-			pstmt.executeUpdate();
+			check = pstmt.executeUpdate();
 		}catch(Exception e) {
 			e.printStackTrace();
 		}finally {
@@ -173,6 +177,7 @@ public class managerDAO {
 			if(rs!=null)
 				try {rs.close();}catch(SQLException sqle) {}
 		}
+		return check;
 	}
 	
 	public itemDTO getOneItem(int item_number) {

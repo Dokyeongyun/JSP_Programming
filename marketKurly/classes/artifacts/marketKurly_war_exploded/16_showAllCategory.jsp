@@ -7,7 +7,7 @@
 	<title>Insert title here</title>
 </head>
 <body>
-<c:set var="check" value="-1"/>
+<c:set var="check" value="1"/>
 <div>
 	<h3>상품 카테고리 검색</h3>
 	<form method = "post" action = "showOneCategory.do">
@@ -29,7 +29,7 @@
 	<c:if test="${j%3==0}"><tr height="250"></c:if>
 	<td width = "400" align="center">
 		<c:if test="${check == 1}">
-		<a href="00_shopMain.jsp?center=28_itemInfoUpdate.jsp?item_number=${bean.item_number}&item_image=${bean.item_image}" >
+		<a href="itemInfoUpdate.do?item_number=${bean.item_number}&item_image=${bean.item_image}" >
 			<c:if test="${bean.item_stock > 0}">
 				<img alt="" src="img/${bean.item_image}" width="250">
 			</c:if>

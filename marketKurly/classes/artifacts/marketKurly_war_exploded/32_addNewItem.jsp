@@ -1,14 +1,12 @@
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="EUC-KR">
-<title>Insert title here</title>
+	<meta charset="EUC-KR">
+	<title>Insert title here</title>
 </head>
 <body>
-
-<form method="post" action = "33_addNewItemPro.jsp" enctype="multipart/form-data" accept-charset="UTF-8">
+<form method="post" action = "addNewItemPro.do" enctype="multipart/form-data" accept-charset="UTF-8">
 	<table border="1"  style="border-collapse:collapse;">
 		<tr height="30">
 			<td width ="200">상품 카테고리</td>
@@ -19,7 +17,6 @@
 					<option value="300">육류</option>
 					<option value="400">전자제품</option>
 				</select>
-			
 			</td>
 		</tr>
 		<tr height="30">
@@ -58,10 +55,8 @@
 				<input type="text" name="discountRate">%
 			</td>
 		</tr>
-	
 	</table>
 	<input type="submit" value="상품 추가하기">
 </form>
-
 </body>
 </html>

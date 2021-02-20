@@ -6,7 +6,7 @@
 	<title>Insert title here</title>
 </head>
 <body>
-<form method = "post" action = "40_updatePro.jsp" accept-charset="UTF-8">
+<form method = "post" action = "updatePro.do" accept-charset="UTF-8">
 	<table border = "1" style="border-collapse:collapse;">
 		<tr height="40">
 			<td align="center" width="120"> 글번호 </td>

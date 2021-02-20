@@ -1,6 +1,4 @@
-<%@page import="marketKurly.DAO.managerDAO"%>
-<%@ page language="java" contentType="text/html; charset=EUC-KR"
-    pageEncoding="EUC-KR"%>
+<%@ page language="java" contentType="text/html; charset=EUC-KR" pageEncoding="EUC-KR"%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,12 +6,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<%
-	int item_number=Integer.parseInt(request.getParameter("item_number"));
-	System.out.println("item_number확인 = " + item_number);
-	
-	managerDAO.instance.deleteItem(item_number);
-	response.sendRedirect("00_shopMain.jsp?center=28_itemInfoUpdate.jsp");
-	%>
+<c:if test="${check != -1}">
+	<script>
+		alert("상품정보 삭제가 완료되었습니다.");
+		location.href="itemInfoUpdate.do";
+	</script>
+</c:if>
+<c:if test="${check == -1}">
+	<script>
+		alert("상품정보 삭제에 실패했습니다.");
+		history.back();
+	</script>
+</c:if>
 </body>
 </html>
