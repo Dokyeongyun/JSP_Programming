@@ -5,6 +5,7 @@
 <html>
 <head>
     <title>${title}</title>
+    <script src="//code.jquery.com/jquery.min.js"></script>
 </head>
 <body>
 <style>
@@ -57,6 +58,11 @@
     .center {
         width: 100%;
     }
+
+    #subMenu > td {
+        font-size: 14px;
+        color: #646464;
+    }
 </style>
 
 <div class="header">
@@ -90,13 +96,27 @@
                 <td style="padding: 0 0">
                     <a href="/"><img src="img/logo.png" alt="" height="140"></a>
                 </td>
-                <td>메뉴</td>
-                <td>이디야멤버스</td>
-                <td>기프트카드</td>
-                <td>이디야커피랩</td>
-                <td>이디야컬쳐랩</td>
-                <td>이디야 소식</td>
+                <td class="menu" onmouseover="over()">메뉴</td>
+                <td class="menu" onmouseover="over()">이디야멤버스</td>
+                <td class="menu" onmouseover="over()">기프트카드</td>
+                <td class="menu" onmouseover="over()">이디야커피랩</td>
+                <td class="menu" onmouseover="over()">이디야컬쳐랩</td>
+                <td class="menu" onmouseover="over()">이디야 소식</td>
+            </tr>
+            <tr id="subMenu" style="display: none">
+                <td></td>
+                <td onmouseover="over()" onmouseout="out()"><a href="showBeverage.jsp">음료</a></td>
             </tr>
         </table>
     </div>
 </div>
+
+<script>
+    var subMenu = $("#subMenu");
+    function over(){
+        subMenu.show();
+    }
+    function out() {
+        subMenu.hide();
+    }
+</script>
