@@ -23,7 +23,7 @@
                         <input type="submit" value="로그인"/>
                     </div>
                     <div class="login_content_button">
-                        <input type="button" value="회원가입"/>
+                        <input type="button" onclick="location.href='join.jsp'" value="회원가입"/>
                         <input type="button" value="이메일 찾기"/>
                         <input type="button" value="비밀번호 찾기"/>
                     </div>

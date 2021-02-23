@@ -1,4 +1,5 @@
 <%@ page import="DAO.MemberDAO" %>
+<%@ page import="DTO.MemberDTO" %>
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <jsp:include page="header.jsp"/>
 
@@ -6,9 +7,10 @@
     String id = request.getParameter("id");
     String password = request.getParameter("password");
 
-    int check = MemberDAO.instance.memberLogin(id, password);
+    MemberDTO member = MemberDAO.instance.memberLogin(id, password);
 
-    if(check == 1){
+    if(member != null){
+        session.setAttribute("member", member);
 %>
 <script>
     alert('로그인 성공!');

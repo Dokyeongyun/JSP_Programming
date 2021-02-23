@@ -75,7 +75,7 @@
                 <tr>
                     <td><a href="login.jsp">로그인</a></td>
                     <td width="10" align = "center"><img alt="" src="img/top1.jpg"></td>
-                    <td>회원가입</td>
+                    <td><a href="join.jsp">회원가입</a></td>
                     <td width="10" align = "center"><img alt="" src="img/top1.jpg"></td>
                     <td>매장찾기</td>
                     <td width="10" align = "center"><img alt="" src="img/top1.jpg"></td>
